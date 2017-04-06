@@ -187,3 +187,45 @@ INSERT INTO hornbd.sells (technician_id, product_id, customer_id, sales_amount) 
 INSERT INTO hornbd.sells (technician_id, product_id, customer_id, sales_amount) VALUES ('00000003','product a','c',130);
 INSERT INTO hornbd.sells (technician_id, product_id, customer_id, sales_amount) VALUES ('00000004','product a','b',987);
 ```
+
+# Questions
+
+```
+/* List all sold products (product ID, product name, and standard price) where the standard
+price is at least $100. */
+SELECT s.product_id, s.product_name, s.standard_price
+FROM hornbd.sold_product s
+WHERE s.standard_price >= 100;
+
+/* List all products (product ID and name) for sold products that have never been
+purchased by any customer. */
+SELECT s.product_id, s.product_name
+FROM hornbd.sold_product s
+WHERE s.product_id not in (
+    SELECT product_id
+    FROM hornbd.sells);
+
+/* List name and ID for technicians in the Data Science unit who have SQL and R
+programming as skills. */
+SELECT t.technician_name, t.technician_id
+FROM hornbd.technician t, hornbd.skill s
+WHERE t.technician_id = s.technician_id AND s.skill_name = 'SQL' AND t.technician_id in(
+    SELECT t.technician_id
+    FROM hornbd.technician t, hornbd.skill s
+    WHERE t.technician_id = s.technician_id AND s.skill_name = 'R');
+
+/* List the technicians (identifier and name) who can repair a product that they have also
+sold for a cost greater than $1000. */
+SELECT t.technician_id, t.technician_name
+FROM hornbd.technician t, hornbd.can_repair r, hornbd.sells s
+WHERE t.technician_id = r.technician_id AND t.technician_id = s.technician_id AND s.sales_amount > 1000;
+
+
+/* Give the sum of repair costs by product category and name where the product category
+contains at least two products with a warranty length greater than 1. */
+SELECT sum(s.repair_amount), s.product_category_id, s.product_name
+FROM hornbd.sold_product s
+WHERE s.length_date > 1
+GROUP BY s.product_category_id, s.product_name
+HAVING count(*)> 2;
+```
