@@ -88,32 +88,39 @@ FOREIGN KEY (technician_id) REFERENCES hornbd.technician(technician_id) /* FK ->
 );
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000001');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000001');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('python','00000002');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('C++','00000001');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('java','00000003');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000004');
-/* insert more values */
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('C#','00000001');
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('C++','00000001');
+
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('python','00000002');
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('java','00000003');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000003');
+
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000004');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000004');
+
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('C#','00000007');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000007');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000007');
+
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000008');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000009');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000008');
+
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000009');
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000009');
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('Javascript','00000009');
+
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000010');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000010');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000009');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000012');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000012');
+
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000011');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000011');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('C','00000012');
-INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('C++','00000012');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('Java','00000011');
 INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('javascript','00000011');
+
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('C','00000012');
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('C++','00000012');
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('SQL','00000012');
+INSERT INTO hornbd.skill (skill_name, technician_id) VALUES ('R','00000012');
 
 /* CREATE TABLE -> can_repair ->->->->->->->->->->->->->->->->->->->-> */
 CREATE TABLE hornbd.can_repair
