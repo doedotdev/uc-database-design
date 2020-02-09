@@ -1,4 +1,5 @@
-# db
+# uc-database-design
+University of Cincinnati - Database Design
 
 ```
 /* Drop all tables
